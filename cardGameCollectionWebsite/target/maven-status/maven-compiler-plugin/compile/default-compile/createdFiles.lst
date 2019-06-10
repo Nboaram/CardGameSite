@@ -1,0 +1,5 @@
+com\qa\repository\CardDB.class
+com\qa\rest\CardEndpoint.class
+com\qa\rest\JAXRSConfiguration.class
+com\qa\model\Card.class
+com\qa\repository\CardRepository.class
