@@ -1,4 +1,4 @@
-function fetchData(requestType, extension, dataToSend) {
+function serverRequest(requestType, extension, dataToSend) {
 
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
@@ -16,6 +16,7 @@ function fetchData(requestType, extension, dataToSend) {
             }
         };
         request.open(requestType, "http://localhost:8080/cardGameCollectionWebsite-1.0/api" + extension);
+        request.setRequestHeader("Content-Type", "application/json");
         request.send(dataToSend);
     })
 }
