@@ -1,0 +1,255 @@
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>
+        Card Game Website
+    </title>
+</head>
+
+<body class="bg-info">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Card Game Collection</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Filter" aria-label="Filter">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit"
+                        onclick="getAllCards()">Search</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li>
+                    <button class="btn btn-outline-success my-2 my-sm-0">Login</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3 bg-dark">
+                <table align="center" class="text-light">
+                    <tr>
+                        <td id="0.cost">Cost</td>
+                        <td></td>
+                        <td align="center" id="0.name">Name</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td align="center" id="0.type">Type</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="5" id="0.cardText">Card Text</td>
+                    </tr>
+                    <tr>
+                        <td id="0.damage">Dmg</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="0.health">Hlth</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-1">
+
+                </div>
+            <div class="col-3 bg-dark">
+                <table align="center" class="text-light">
+                    <tr>
+                        <td id="1.cost">Cost</td>
+                        <td></td>
+                        <td align="center" id="1.name">Name</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td align="center" id="1.type">Type</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="5" id="1.cardText">Card Text</td>
+                    </tr>
+                    <tr>
+                        <td id="1.damage">Dmg</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="1.health">Hlth</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-1">
+
+            </div>
+            <div class="col-3 bg-dark">
+                <table align="center" class="text-light">
+                    <tr>
+                        <td id="2.cost">Cost</td>
+                        <td></td>
+                        <td align="center" id="2.name">Name</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <td>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                    </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td align="center" id="2.type">Type</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td align="center" colspan="5" id="2.cardText">Card Text</td>
+                    </tr>
+                    <tr>
+                        <td id="2.damage">Dmg</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td id="2.health">Hlth</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <div class="row"> 
+        <p>
+        <br>
+        </p> 
+    </div>    
+
+    <div class="row">
+        <div class="col-3 bg-dark">
+            <table align="center" class="text-light">
+                <tr>
+                    <td id="3.cost">Cost</td>
+                    <td></td>
+                    <td align="center" id="3.name">Name</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <td>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="center" id="3.type">Type</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td align="center" colspan="5" id="3.cardText">Card Text</td>
+                </tr>
+                <tr>
+                    <td id="3.damage">Dmg</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td id="3.health">Hlth</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-1">
+        </div>
+
+
+    <div class="col-3 bg-dark">
+        <table align="center" class="text-light">
+            <tr>
+                <td id="4.cost">Cost</td>
+                <td></td>
+                <td align="center" id="4.name">Name</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <td>
+                <br>
+                <br>
+                <br>
+                <br>
+            </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td align="center" id="4.type">Type</td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="5" id="4.cardText">Card Text</td>
+            </tr>
+            <tr>
+                <td id="4.damage">Dmg</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="4.health">Hlth</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-1">
+    </div>
+    </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="fetchData.js"></script>
+    <script src="getAllCards.js"></script>
+</body>
+
+</html>
