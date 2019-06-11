@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>
+            Update Card
+        </title>
+    </head>
+
+    <body class="bg-dark">
+        <h1 align="center" class="text-dark">Update Card</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table align="center" class="text-light bg-info">
+                        <tr>
+                            <th>CardID</th>
+                            <th>Name</th>
+                            <th>Cost</th>
+                            <th>Type</th>
+                            <th>cardText</th>
+                            <th>Damage</th>
+                            <th>Health</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" id="idInput"></td>
+                            <td><input type="text" id="nameInput"></td>
+                            <td><input type="number" id="costInput"></td>
+                            <td><input type="text" id="typeInput"></td>
+                            <td><input type="text" id="cardTextInput"></td>
+                            <td><input type="number" id="damageInput"></td>
+                            <td><input type="number" id="healthInput"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" align="center">
+                    <button class="btn btn-outline-success" onclick="updateCard()">Update Card</button>
+                    <button class="btn btn-outline-info" onclick="changePage('http://localhost:8080/cardGameCollectionWebsite-1.0/')">Go Back</button>
+                </div>
+            </div>
+        </div>
+        <script src="serverRequest.js"></script>
+        <script src="updateCard.js"></script>
+        <script src="changePage.js"></script>
+    </body>
+</html>
