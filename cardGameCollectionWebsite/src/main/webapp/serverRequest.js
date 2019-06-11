@@ -2,10 +2,10 @@ function serverRequest(requestType, extension, dataToSend) {
 
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
-
+        request.open(requestType, "http://localhost:8080/cardGameCollectionWebsite-1.0/api" + extension);
+        request.setRequestHeader("Content-Type", "application/json");
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
-                    console.log("I was done");
                 if (request.status >= 200 && request.status <300){
                     resolve(request);
                     console.log("request successful")
@@ -15,8 +15,6 @@ function serverRequest(requestType, extension, dataToSend) {
                 }
             }
         };
-        request.open(requestType, "http://localhost:8080/cardGameCollectionWebsite-1.0/api" + extension);
-        request.setRequestHeader("Content-Type", "application/json");
         request.send(dataToSend);
     })
 }
