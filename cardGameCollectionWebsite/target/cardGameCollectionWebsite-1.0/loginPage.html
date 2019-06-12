@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <title>
+            Login
+        </title>
+    </head>
+    <body class="bg-dark">
+        <h1 align="center" class="text-dark">Login</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table align="center" class="text-light bg-info">
+                        <tr>
+                            <th>Name</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" id="nameInput"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" align="center">
+                    <button class="btn btn-outline-success" onclick="changePage('/cardGameCollectionWebsite-1.0/createUser.html')">Register</button>
+                    <button class="btn btn-outline-info" onclick="changePage('/cardGameCollectionWebsite-1.0/')">Login</button>
+                    <button class="btn btn-outline-info" onclick="changePage('/cardGameCollectionWebsite-1.0/')">Go Back</button>
+                </div>
+            </div>
+        </div>
+        <script src="serverRequest.js"></script>
+        <script src="changePage.js"></script>
+    </body>
+</html>
