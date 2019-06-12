@@ -1,3 +1,3 @@
 function changePage(page) {
-    window.location = page;
+    window.location = "http://"+window.location.host+page;
 }

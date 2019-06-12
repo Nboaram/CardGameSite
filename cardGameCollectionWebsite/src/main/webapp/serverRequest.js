@@ -2,7 +2,7 @@ function serverRequest(requestType, extension, dataToSend) {
 
     return new Promise((resolve, reject) => {
         const request = new XMLHttpRequest();
-        request.open(requestType, "http://localhost:8080/cardGameCollectionWebsite-1.0/api" + extension);
+        request.open(requestType, "http://"+window.location.host+"/cardGameCollectionWebsite-1.0/api" + extension);
         request.setRequestHeader("Content-Type", "application/json");
         request.onreadystatechange = () => {
             if (request.readyState === 4) {
