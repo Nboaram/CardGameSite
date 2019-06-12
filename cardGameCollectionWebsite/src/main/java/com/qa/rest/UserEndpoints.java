@@ -18,67 +18,67 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
-import com.qa.model.Card;
-import com.qa.repository.CardRepository;
+import com.qa.model.User;
+import com.qa.repository.UserRepository;
 
 @Path("/")
-public class CardEndpoint {
+public class UserEndpoints {
 
 	@Inject
-	private CardRepository cardRepository;
-
+	private UserRepository userRepository;
+	
 	@GET
-	@Path("/cards")
+	@Path("/users")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getAll() {
-		List<Card> list = cardRepository.readAll();
-		if (list.size() == 0) {
+		List<User> list = userRepository.readAll();
+		if(list.size() == 0) {
 			return Response.noContent().build();
 		}
 		return Response.ok(list).build();
 	}
-
+	
 	@GET
-	@Path("/cards/{id}")
+	@Path("/users/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOne(@PathParam("id") int id) {
-		if (cardRepository.read(id).equals(null)) {
+		if (userRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Card card = cardRepository.read(id);
-		return Response.ok(card).build();
+		User user = userRepository.read(id);
+		return Response.ok(user).build();
 	}
-
+	
 	@POST
 	@Consumes({ "application/json" })
 	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/cards")
-	public Response addCard(Card cardRS, @Context UriInfo uriInfo) {
-		cardRS = cardRepository.create(cardRS);
-		URI createdURI = uriInfo.getBaseUriBuilder().path("" + cardRS.getId()).build();
+	@Path("/users")
+	public Response addUser(User userRS, @Context UriInfo uriInfo) {
+		userRS = userRepository.create(userRS);
+		URI createdURI = uriInfo.getBaseUriBuilder().path("" + userRS.getId()).build();
 		System.out.println(createdURI);
 		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
 	}
-
+	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "application/json" })
-	@Path("/cards/{id}")
-	public Response updateCard(Card card, @PathParam("id") int id) {
-		if (cardRepository.read(id).equals(null)) {
+	@Path("/users/{id}")
+	public Response updateUser(User user, @PathParam("id") int id) {
+		if (userRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Card cardRS2 = cardRepository.update(id, card);
-		return Response.ok(cardRS2).build();
+		User userRS2 = userRepository.update(id, user);
+		return Response.ok(userRS2).build();
 	}
-
+	
 	@DELETE
-	@Path("/cards/{id}")
-	public Response deleteCard(@PathParam("id") int id) {
-		if (cardRepository.read(id).equals(null)) {
+	@Path("user/{id}")
+	public Response deleteUser(@PathParam("id") int id) {
+		if (userRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		cardRepository.delete(id);
+		userRepository.delete(id);
 		return Response.noContent().build();
 	}
 }
