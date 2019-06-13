@@ -20,7 +20,8 @@ function login() {
                     console.log("User Found: " + enteredName);
                     sessionStorage.setItem('loggedIn', 'true');
                     sessionStorage.setItem('username', enteredName);
-                    changePage("/cardGameCollectionWebsite-1.0/");
+                    sessionStorage.setItem('id', this.information[user].id);
+                    changePage("/cardGameCollectionWebsite-1.0/userDetails.html");
                 }
             }
         }

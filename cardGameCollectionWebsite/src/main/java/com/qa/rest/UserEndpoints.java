@@ -73,7 +73,7 @@ public class UserEndpoints {
 	}
 	
 	@DELETE
-	@Path("user/{id}")
+	@Path("/users/{id}")
 	public Response deleteUser(@PathParam("id") int id) {
 		if (userRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
