@@ -10,32 +10,67 @@
     </title>
 </head>
 
-<body class="bg-dark">
-    <h1 align="center" class="text-dark">Delete Card</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <table align="center" class="text-light bg-info">
-                    <tr>
-                        <th>Card ID</th>
-                    </tr>
-                    <tr>
-                        <td><input type="number" id="idInput"></td>
-                    </tr>
-                </table>
+<body class="bg-info">
+
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Card Game Collection</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <button class="btn btn-outline-info my-2 my-sm-0" onclick="changePage('/cardGameCollectionWebsite-1.0/addCard.html')">Add Card</button>
+                </li>
+                <li class="nav-item active">
+                    <button class="btn btn-outline-info my-2 my-sm-0" onclick="changePage('/cardGameCollectionWebsite-1.0/updateCard.html')">Update Card</button>
+                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li>
+                    <span id="userNameText" class="navbar-text">
+                        UserName
+                    </span>
+                </li>
+                <li>
+                    <button class="btn btn-outline-success my-2 my-sm-0" onclick="changePage('/cardGameCollectionWebsite-1.0/loginPage.html')">Login</button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div>
+
+        <h1 align="center" class="text-dark">Delete Card</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <table align="center" class="text-light bg-dark">
+                        <tr>
+                            <th>Card ID</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" id="idInput"></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12" align="center">
+                    <button class="btn btn-outline-dark" onclick="deleteCard()">Delete Card</button>
+                    <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/')">Go Back</button>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12" align="center">
-                <button class="btn btn-outline-success" onclick="deleteCard()">Delete Card</button>
-                <button class="btn btn-outline-info" onclick="changePage('/cardGameCollectionWebsite-1.0/')">Go Back</button>
-            </div>
-        </div>
-    </div>
-    <script src="changePage.js"></script>
-    <script src="deleteCard.js"></script>
-    <script src="serverRequest.js"></script>
-   
+        <script src="loggedInUser,js"></script>
+        <script src="changePage.js"></script>
+        <script src="deleteCard.js"></script>
+        <script src="serverRequest.js"></script>
+
 </body>
 
 </html>
