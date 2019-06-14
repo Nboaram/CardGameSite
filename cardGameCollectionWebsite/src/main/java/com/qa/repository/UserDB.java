@@ -2,6 +2,7 @@ package com.qa.repository;
 
 import javax.transaction.Transactional.TxType;
 
+import com.qa.model.Deck;
 import com.qa.model.User;
 
 import java.util.List;
@@ -32,6 +33,13 @@ public class UserDB implements UserRepository {
 		TypedQuery<User> q = em.createQuery("Select usr from User usr", User.class);
 		List<User> list = q.getResultList();
 		return list;
+	}
+	
+	@Transactional(value = TxType.REQUIRED)
+	public User addDeck(int id, Deck deck) {
+		User user = read(id);
+		user.addDeck(deck);
+		return user;
 	}
 	
 	@Transactional(value = TxType.REQUIRED)

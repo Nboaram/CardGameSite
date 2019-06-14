@@ -1,6 +1,5 @@
 package com.qa.model;
 
-import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -18,9 +17,9 @@ public class User {
 	private int id;
 	private String name;
 	
-	@OneToMany(cascade = (CascadeType.PERSIST))
+	@OneToMany(cascade = (CascadeType.ALL))
 	@JoinColumn(name="userID")
-	private Set<Deck> decks = new HashSet<Deck>();
+	private Set<Deck> decks;
 	
 	public int getId() {
 		return id;
@@ -34,10 +33,13 @@ public class User {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<Deck> getDecks() {
+	public Set<Deck> addDeck(Deck deck) {
+		decks.add(deck);
 		return decks;
 	}
-	public void setDecks(Set<Deck> decks) {
-		this.decks = decks;
-	}	
+	public Set<Deck> deleteDeck(Deck deck){
+		decks.remove(deck);
+		return decks;
+	}
+	
 }
