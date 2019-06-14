@@ -1,9 +1,13 @@
-com\qa\rest\CardEndpoints.class
 com\qa\rest\UserEndpoints.class
+com\qa\rest\DeckEndpoints.class
 com\qa\rest\JAXRSConfiguration.class
 com\qa\repository\UserRepository.class
-com\qa\repository\CardDB.class
 com\qa\model\User.class
+com\qa\repository\DeckDB.class
 com\qa\repository\UserDB.class
 com\qa\model\Card.class
 com\qa\repository\CardRepository.class
+com\qa\repository\DeckRepository.class
+com\qa\rest\CardEndpoints.class
+com\qa\model\Deck.class
+com\qa\repository\CardDB.class
