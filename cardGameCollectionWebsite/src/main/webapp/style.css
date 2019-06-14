@@ -5,3 +5,11 @@
 .thin-column {
     width:90%;
 }
+
+.tableEntry {
+    padding: 4px;
+}
+
+.rowPadded {
+    padding: 5px;
+}

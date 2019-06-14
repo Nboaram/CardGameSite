@@ -10,6 +10,7 @@ function updateUser() {
     console.log(jsonUser);
     serverRequest("PUT","/users/" + id, jsonUser).then((request) => {
         console.log("Data Sent: " + request.responseText);
+        changePage('/cardGameCollectionWebsite-1.0/userDetails.html');
     })
 }
 

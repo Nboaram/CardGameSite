@@ -8,6 +8,7 @@ function createUser() {
     console.log(jsonUser);
     serverRequest("POST", "/users", jsonUser).then((request) => {
         console.log("Data User: " + request.responseText);
+         changePage('/cardGameCollectionWebsite-1.0/loginPage.html');
     })
 
 }
