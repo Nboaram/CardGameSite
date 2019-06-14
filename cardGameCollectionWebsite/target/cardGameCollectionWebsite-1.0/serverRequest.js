@@ -1,6 +1,9 @@
 function serverRequest(requestType, extension, dataToSend) {
 
     return new Promise((resolve, reject) => {
+        console.log(requestType);
+        console.log(extension);
+        console.log(dataToSend);
         const request = new XMLHttpRequest();
         console.log("http://"+window.location.host+"/cardGameCollectionWebsite-1.0/api" + extension);
         request.open(requestType, "http://"+window.location.host+"/cardGameCollectionWebsite-1.0/api" + extension);

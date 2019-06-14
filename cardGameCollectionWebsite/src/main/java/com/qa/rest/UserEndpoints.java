@@ -18,6 +18,7 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
+import com.qa.model.Deck;
 import com.qa.model.User;
 import com.qa.repository.UserRepository;
 
@@ -58,6 +59,18 @@ public class UserEndpoints {
 		URI createdURI = uriInfo.getBaseUriBuilder().path("" + userRS.getId()).build();
 		System.out.println(createdURI);
 		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
+	}
+	
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes({ "application/json" })
+	@Path("/users/decks/{id}")
+	public Response addDeck(Deck deck, @PathParam("id") int id) {
+		if (userRepository.read(id).equals(null)) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		User userRS3 = userRepository.addDeck(id, deck);
+		return Response.ok(userRS3).build();
 	}
 	
 	@PUT
