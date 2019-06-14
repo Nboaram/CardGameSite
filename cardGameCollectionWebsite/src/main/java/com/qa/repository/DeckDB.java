@@ -34,6 +34,13 @@ public class DeckDB implements DeckRepository {
 		return list;
 	}
 	
+	public List<Deck> readAllFromUser(int id) {
+		System.out.println("Select deck from Deck deck where userId =" + id);
+		TypedQuery<Deck> q = em.createQuery("Select deck from Deck deck where userId =" + id, Deck.class);
+		List<Deck> list = q.getResultList();
+		return list;
+	}
+	
 	@Transactional(value = TxType.REQUIRED)
 	public Deck update(int id, Deck newInfo) {
 		Deck user = read(id);

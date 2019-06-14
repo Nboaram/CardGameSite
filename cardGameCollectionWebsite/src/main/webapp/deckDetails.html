@@ -33,35 +33,40 @@
                     <button class="btn btn-outline-info my-2 my-sm-0" onclick="changePage('/cardGameCollectionWebsite-1.0/updateCard.html')">Update Card</button>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li>
+                    <span id="userNameText" class="navbar-text">
+                        UserName
+                    </span>
+                </li>
+            </ul>
         </div>
     </nav>
 
-    <h1 align="center" class="text-dark" id="userNameText">UserName</h1>
+    <h1 align="center" class="text-dark" id="deckNameText">Name of Deck</h1>
     <div class="container">
         <div class="row rowPadded" align="center">
             <div class="col-12">
                 <table align="center" class="text-light bg-dark ">
                     <tr>
-                        <th class="tableEntry" align="center">ID</th>
-                        <th class="tableEntry" align="center">Name</th>
+                        <th class="tableEntry" align="center">CardID</th>
+                        <th class="tableEntry" align="center">CardName</th>
                     </tr>
                     <tr>
-                        <td class="tableEntry" id="usersId"></td>
-                        <td class="tableEntry" id="usersName"></td>
+                        <td class="tableEntry">91</td>
+                        <td class="tableEntry">Coinshot</td>
+                    </tr>
+                    <tr>
+                        <td class="tableEntry">555</td>
+                        <td class="tableEntry">Mistborn</td>
                     </tr>
                 </table>
             </div>
         </div>
-        <div class="row rowPadded">
+        <div class="row">
             <div class="col-12" align="center">
-                <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/updateUser.html')">Update</button>
-                <button class="btn btn-outline-dark" onclick="deleteUser()">Delete</button>
-                <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/userDecks.html')">View Decks</button>
-            </div>
-        </div>
-        <div class="row rowPadded">
-            <div class="col-12" align="center">
-                <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/loginPage.html')">Go Back</button>
+                <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/newDeck.html')">New Deck</button>
+                <button class="btn btn-outline-dark" onclick="changePage('/cardGameCollectionWebsite-1.0/userDetails.html')">Go Back</button>
             </div>
         </div>
 
@@ -72,11 +77,9 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
 
-        <script src="deleteUser.js"></script>
         <script src="serverRequest.js"></script>
         <script src="changePage.js"></script>
         <script src="loggedInUser.js"></script>
-        <script src="getUserDetails.js"></script>
 </body>
 
 </html>
