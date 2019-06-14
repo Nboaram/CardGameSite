@@ -14,6 +14,7 @@ public interface DeckRepository {
 	//Read
 	public Deck read(int id);
 	public List<Deck> readAll();
+	public List<Deck> readAllFromUser(int id);
 	
 	//Update
 	public Deck update(int id, Deck deck);

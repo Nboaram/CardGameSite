@@ -39,6 +39,17 @@ public class DeckEndpoints {
 	}
 	
 	@GET
+	@Path("/decks/users/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getAllFromUser(@PathParam("id") int id) {
+		List<Deck> list = deckRepository.readAllFromUser(id);
+		if (list.size() == 0) {
+			return Response.noContent().build();
+		}
+		return Response.ok(list).build();
+	}
+	
+	@GET
 	@Path("/decks/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOne(@PathParam("id") int id) {
