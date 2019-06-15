@@ -71,11 +71,27 @@ function getAllCards() {
             newCell = newRow.insertCell(-1); 
             newCell.id = card+".health";
             newCell.align="center";
+            //New Row 
+            newRow = cardTable.insertRow(-1);
+            newCell = newRow.insertCell(-1);
+            newCell.colSpan="5";
+            newCell.align="center";
+            newButton = document.createElement("button");
+            newButton.className="btn btn-outline-info";
+            newButton.innerHTML = "Add To Deck";
+            newCell.appendChild(newButton);
 
+            newButton.addEventListener("click", function() {
+                sessionStorage.setItem('cardSent', sessionStorage.getItem(card+'.id'))
+                addCardToDeck(sessionStorage.getItem('cardSent'), sessionStorage.getItem('cardId'));
+            })
 
             for(let property in information[card]) {
                     if (property != "id" && property != "pictureUrl") {
                     document.getElementById(card+"."+property).innerHTML = information[card][property];
+                    }
+                    if (property == "id") {
+                        sessionStorage.setItem(card+'.id', information[card][property]);
                     }
             }
             counter = counter+1;
