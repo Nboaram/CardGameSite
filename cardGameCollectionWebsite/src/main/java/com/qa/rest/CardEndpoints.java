@@ -19,6 +19,7 @@ import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
 import com.qa.model.Card;
+import com.qa.model.Decks_Cards;
 import com.qa.repository.CardRepository;
 
 @Path("/")
@@ -70,6 +71,18 @@ public class CardEndpoints {
 		}
 		Card cardRS2 = cardRepository.update(id, card);
 		return Response.ok(cardRS2).build();
+	}
+	
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes({ "application/json" })
+	@Path("/cards/decks/add/{id}")
+	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id) {
+		if (cardRepository.read(id).equals(null)) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		Card cardRS3 = cardRepository.addDecksCards(id, dc);
+		return Response.ok(cardRS3).build();
 	}
 
 	@DELETE

@@ -1,13 +1,17 @@
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\DeckDB.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\rest\UserEndpoints.java
+C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\model\Decks_Cards.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\model\User.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\rest\DeckEndpoints.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\CardDB.java
+C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\Decks_CardsRepository.java
+C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\Decks_CardsDB.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\rest\CardEndpoints.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\model\Card.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\UserDB.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\UserRepository.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\DeckRepository.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\model\Deck.java
+C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\rest\Decks_CardsEndpoints.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\repository\CardRepository.java
 C:\Users\nboar\Documents\GitHub\CardGameSite\cardGameCollectionWebsite\src\main\java\com\qa\rest\JAXRSConfiguration.java

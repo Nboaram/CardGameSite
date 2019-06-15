@@ -18,7 +18,9 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
 import javax.ws.rs.core.UriInfo;
 
+import com.qa.model.Card;
 import com.qa.model.Deck;
+import com.qa.model.Decks_Cards;
 import com.qa.repository.DeckRepository;
 
 @Path("/")
@@ -70,6 +72,18 @@ public class DeckEndpoints {
 		}
 		Deck deckRS2 = deckRepository.update(id, deck);
 		return Response.ok(deckRS2).build();
+	}
+	
+	@PUT
+	@Produces(MediaType.APPLICATION_JSON)
+	@Consumes({ "application/json" })
+	@Path("/cards/decks/add/{id}")
+	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id) {
+		if (deckRepository.read(id).equals(null)) {
+			return Response.status(Status.NOT_FOUND).build();
+		}
+		Deck deckRS3 = deckRepository.addDecksCards(id, dc);
+		return Response.ok(deckRS3).build();
 	}
 	
 	@DELETE

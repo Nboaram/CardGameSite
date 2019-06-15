@@ -3,6 +3,7 @@ package com.qa.repository;
 import java.util.List;
 
 import com.qa.model.Deck;
+import com.qa.model.Decks_Cards;
 
 
 public interface DeckRepository {
@@ -18,6 +19,7 @@ public interface DeckRepository {
 	
 	//Update
 	public Deck update(int id, Deck deck);
+	public Deck addDecksCards(int id, Decks_Cards dc);
 	
 	//Delete
 	public void delete(int id);

@@ -6,8 +6,12 @@ com\qa\model\User.class
 com\qa\repository\DeckDB.class
 com\qa\repository\UserDB.class
 com\qa\model\Card.class
+com\qa\rest\Decks_CardsEndpoints.class
 com\qa\repository\CardRepository.class
 com\qa\repository\DeckRepository.class
 com\qa\rest\CardEndpoints.class
 com\qa\model\Deck.class
+com\qa\repository\Decks_CardsDB.class
+com\qa\repository\Decks_CardsRepository.class
 com\qa\repository\CardDB.class
+com\qa\model\Decks_Cards.class

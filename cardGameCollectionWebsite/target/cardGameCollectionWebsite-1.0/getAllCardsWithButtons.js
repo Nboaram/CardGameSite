@@ -82,9 +82,8 @@ function getAllCards() {
             newCell.appendChild(newButton);
 
             newButton.addEventListener("click", function() {
-                console.log("Stored ID= "  + sessionStorage.getItem(card+'.id'));
                 sessionStorage.setItem('cardSent', sessionStorage.getItem(card+'.id'))
-                console.log("Sent ID= "  + sessionStorage.getItem('cardSent'));
+                addCardToDeck(sessionStorage.getItem('cardSent'), sessionStorage.getItem('cardId'));
             })
 
             for(let property in information[card]) {
