@@ -37,7 +37,7 @@ public class User {
 		decks.add(deck);
 		return decks;
 	}
-	public Set<Deck> deleteDeck(Deck deck){
+	public Set<Deck> removeDeck(Deck deck){
 		decks.remove(deck);
 		return decks;
 	}

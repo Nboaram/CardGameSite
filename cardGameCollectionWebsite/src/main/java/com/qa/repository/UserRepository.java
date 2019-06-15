@@ -17,6 +17,7 @@ public interface UserRepository {
 	//Update
 	public User update(int id, User user);
 	public User addDeck(int id, Deck deck);
+	public User removeDeck(int id, Deck deck);
 	
 	//Delete
 	public void delete(int id);

@@ -64,7 +64,7 @@ public class UserEndpoints {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "application/json" })
-	@Path("/users/decks/{id}")
+	@Path("/users/decks/add/{id}")
 	public Response addDeck(Deck deck, @PathParam("id") int id) {
 		if (userRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
@@ -72,6 +72,7 @@ public class UserEndpoints {
 		User userRS3 = userRepository.addDeck(id, deck);
 		return Response.ok(userRS3).build();
 	}
+
 	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
