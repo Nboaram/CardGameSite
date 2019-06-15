@@ -9,6 +9,7 @@ import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
 import com.qa.model.Card;
+import com.qa.model.Decks_Cards;
 
 @Transactional(TxType.SUPPORTS)
 public class CardDB implements CardRepository {
@@ -49,5 +50,12 @@ public class CardDB implements CardRepository {
 	@Transactional(value = TxType.REQUIRED)
 	public void delete(int id) {
 		em.remove(read(id));
+	}
+	
+	@Transactional(value = TxType.REQUIRED)
+	public Card addDecksCards(int id, Decks_Cards dc) {
+		Card card = read(id);
+		card.addDeckCards(dc);
+		return card;
 	}
 }

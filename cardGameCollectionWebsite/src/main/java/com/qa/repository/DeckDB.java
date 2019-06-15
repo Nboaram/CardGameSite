@@ -8,7 +8,9 @@ import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
 import javax.transaction.Transactional.TxType;
 
+import com.qa.model.Card;
 import com.qa.model.Deck;
+import com.qa.model.Decks_Cards;
 
 
 @Transactional(TxType.SUPPORTS)
@@ -51,5 +53,12 @@ public class DeckDB implements DeckRepository {
 	@Transactional(value = TxType.REQUIRED)
 	public void delete(int id) {
 		em.remove(read(id));
+	}
+	
+	@Transactional(value = TxType.REQUIRED)
+	public Deck addDecksCards(int id, Decks_Cards dc) {
+		Deck deck = read(id);
+		deck.addDeckCards(dc);
+		return deck;
 	}
 }
