@@ -59,17 +59,6 @@ public class DeckEndpoints {
 		Deck deck = deckRepository.read(id);
 		return Response.ok(deck).build();
 	}
-	
-	@POST
-	@Consumes({ "application/json" })
-	@Produces(MediaType.TEXT_PLAIN)
-	@Path("/decks")
-	public Response addDeck(Deck deckRS, @Context UriInfo uriInfo) {
-		deckRS = deckRepository.create(deckRS);
-		URI createdURI = uriInfo.getBaseUriBuilder().path("" + deckRS.getId()).build();
-		System.out.println(createdURI);
-		return Response.ok(createdURI.toString()).status(Status.CREATED).build();
-	}
 
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)

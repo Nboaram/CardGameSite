@@ -43,6 +43,13 @@ public class UserDB implements UserRepository {
 	}
 	
 	@Transactional(value = TxType.REQUIRED)
+	public User removeDeck(int id, Deck deck) {
+		User user = read(id);
+		user.removeDeck(deck);
+		return user;
+	}
+	
+	@Transactional(value = TxType.REQUIRED)
 	public User update(int id, User newInfo) {
 		User user = read(id);
 		user.setName(newInfo.getName());

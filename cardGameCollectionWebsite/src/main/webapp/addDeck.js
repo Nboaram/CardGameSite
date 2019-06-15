@@ -7,12 +7,8 @@ function addDeck() {
     let id = sessionStorage.getItem('id');
     let jsonDeck = JSON.stringify(deck);
     console.log(jsonDeck);
-    serverRequest("POST","/decks", jsonDeck).then((request) =>{
-         console.log("Data Sent:" + request.responseText);
-        serverRequest("PUT", "/users/decks/" + id, jsonDeck).then((request) =>{
+    serverRequest("PUT", "/users/decks/add/" + id, jsonDeck).then((request) =>{
             console.log("Added Deck to User");
-        })
-       
     })
 }
 
