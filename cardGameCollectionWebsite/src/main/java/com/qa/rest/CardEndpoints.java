@@ -76,7 +76,7 @@ public class CardEndpoints {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "application/json" })
-	@Path("/cards/decks/add/{id}")
+	@Path("/cardsdecks/{id}")
 	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id) {
 		if (cardRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();

@@ -83,7 +83,7 @@ function getAllCards() {
 
             newButton.addEventListener("click", function() {
                 sessionStorage.setItem('cardSent', sessionStorage.getItem(card+'.id'))
-                addCardToDeck(sessionStorage.getItem('cardSent'), sessionStorage.getItem('cardId'));
+                addCardToDeck(sessionStorage.getItem('cardSent'), sessionStorage.getItem('deckId'));
             })
 
             for(let property in information[card]) {

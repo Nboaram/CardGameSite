@@ -26,7 +26,7 @@ public class Card {
 	
 	@OneToMany(cascade = (CascadeType.ALL))
 	@JoinColumn(name ="cardID")
-	private Set<Decks_Cards> decksCards;
+	private Set<Decks_Cards> cardsDecks;
 	
 	public int getId() {
 		return id;
@@ -77,12 +77,12 @@ public class Card {
 		this.health = health;
 	}
 	public Set<Decks_Cards> addDeckCards(Decks_Cards dc) {
-		decksCards.add(dc);
-		return decksCards;
+		cardsDecks.add(dc);
+		return cardsDecks;
 	}
 	public Set<Decks_Cards> removeDeckCards(Decks_Cards dc){
-		decksCards.remove(dc);
-		return decksCards;
+		cardsDecks.remove(dc);
+		return cardsDecks;
 	}
 	
 
