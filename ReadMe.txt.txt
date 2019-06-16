@@ -1,0 +1,1 @@
+Card Game Collection Website - Full Stack Application
