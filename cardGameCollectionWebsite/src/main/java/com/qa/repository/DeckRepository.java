@@ -2,6 +2,7 @@ package com.qa.repository;
 
 import java.util.List;
 
+import com.qa.model.Card;
 import com.qa.model.Deck;
 import com.qa.model.Decks_Cards;
 
@@ -16,6 +17,7 @@ public interface DeckRepository {
 	public Deck read(int id);
 	public List<Deck> readAll();
 	public List<Deck> readAllFromUser(int id);
+	public List<Decks_Cards> readAllCardsFromDeck(int id);
 	
 	//Update
 	public Deck update(int id, Deck deck);

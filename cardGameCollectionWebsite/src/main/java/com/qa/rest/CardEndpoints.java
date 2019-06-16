@@ -72,18 +72,6 @@ public class CardEndpoints {
 		Card cardRS2 = cardRepository.update(id, card);
 		return Response.ok(cardRS2).build();
 	}
-	
-	@PUT
-	@Produces(MediaType.APPLICATION_JSON)
-	@Consumes({ "application/json" })
-	@Path("/cardsdecks/{id}")
-	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id) {
-		if (cardRepository.read(id).equals(null)) {
-			return Response.status(Status.NOT_FOUND).build();
-		}
-		Card cardRS3 = cardRepository.addDecksCards(id, dc);
-		return Response.ok(cardRS3).build();
-	}
 
 	@DELETE
 	@Path("/cards/{id}")
