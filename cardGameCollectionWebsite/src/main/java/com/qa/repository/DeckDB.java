@@ -30,6 +30,11 @@ public class DeckDB implements DeckRepository {
 		return deck;
 	}
 	
+	public Card readCard(int id) {
+		Card card = em.find(Card.class, id);
+		return card;
+	}
+	
 	public List<Deck> readAll() {
 		TypedQuery<Deck> q = em.createQuery("Select deck from Deck deck", Deck.class);
 		List<Deck> list = q.getResultList();
@@ -56,9 +61,11 @@ public class DeckDB implements DeckRepository {
 	}
 	
 	@Transactional(value = TxType.REQUIRED)
-	public Deck addDecksCards(int id, Decks_Cards dc) {
+	public Deck addDecksCards(int id, int cardId, Decks_Cards dc) {
 		Deck deck = read(id);
+		Card card = readCard(cardId);
 		deck.addDeckCards(dc);
+		card.addDeckCards(dc);
 		return deck;
 	}
 }

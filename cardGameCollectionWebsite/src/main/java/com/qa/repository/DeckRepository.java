@@ -19,7 +19,7 @@ public interface DeckRepository {
 	
 	//Update
 	public Deck update(int id, Deck deck);
-	public Deck addDecksCards(int id, Decks_Cards dc);
+	public Deck addDecksCards(int id, int cardId, Decks_Cards dc);
 	
 	//Delete
 	public void delete(int id);

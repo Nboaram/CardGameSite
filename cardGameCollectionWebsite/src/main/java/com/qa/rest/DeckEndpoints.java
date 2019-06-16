@@ -77,12 +77,12 @@ public class DeckEndpoints {
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
 	@Consumes({ "application/json" })
-	@Path("/cards/decks/add/{id}")
-	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id) {
+	@Path("/decks/cards/add/{id}/{cardId}")
+	public Response addDecksCards(Decks_Cards dc, @PathParam("id") int id, @PathParam("cardId") int cardId) {
 		if (deckRepository.read(id).equals(null)) {
 			return Response.status(Status.NOT_FOUND).build();
 		}
-		Deck deckRS3 = deckRepository.addDecksCards(id, dc);
+		Deck deckRS3 = deckRepository.addDecksCards(id, cardId, dc);
 		return Response.ok(deckRS3).build();
 	}
 	
