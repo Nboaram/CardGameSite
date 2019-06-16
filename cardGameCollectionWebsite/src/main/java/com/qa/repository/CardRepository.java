@@ -13,10 +13,10 @@ public interface CardRepository {
 	//Read
 	public Card read(int id);
 	public List<Card> readAll();
+
 	
 	//Update
 	public Card update(int id, Card card);
-	public Card addDecksCards(int id, Decks_Cards dc);
 	
 	//Delete
 	public void delete(int id);

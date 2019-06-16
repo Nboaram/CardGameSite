@@ -33,6 +33,7 @@ public class CardDB implements CardRepository {
 		List<Card> list = q.getResultList();
 		return list;
 	}
+
 	
 	@Transactional(value = TxType.REQUIRED)
 	public Card update(int id, Card newInfo) {
@@ -50,12 +51,5 @@ public class CardDB implements CardRepository {
 	@Transactional(value = TxType.REQUIRED)
 	public void delete(int id) {
 		em.remove(read(id));
-	}
-	
-	@Transactional(value = TxType.REQUIRED)
-	public Card addDecksCards(int id, Decks_Cards dc) {
-		Card card = read(id);
-		card.addDeckCards(dc);
-		return card;
 	}
 }

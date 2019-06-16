@@ -48,6 +48,17 @@ public class DeckDB implements DeckRepository {
 		return list;
 	}
 	
+	public List<Decks_Cards> readAllCardsFromDeck(int id) {
+		TypedQuery<Decks_Cards> ex = em.createQuery("Select dc FROM Decks_Cards dc WHERE dc.id =73", Decks_Cards.class);
+		System.out.println("EXAMPLE WHICH TOTALLY WORKED YO:" + ex.getResultList());
+		TypedQuery<Decks_Cards> q = em.createQuery("SELECT crd FROM Card crd WHERE crd.id  IN"
+				+ " (SELECT secdc.cardid FROM Decks_Cards secdc WHERE secdc.id IN"
+				+ " (SELECT dc.id FROM Decks_Cards dc WHERE dc.DECKID = 73))", Decks_Cards.class);
+		List<Decks_Cards> list = q.getResultList();
+		System.out.println("LIST: " + list);
+		return list;
+	}
+	
 	@Transactional(value = TxType.REQUIRED)
 	public Deck update(int id, Deck newInfo) {
 		Deck user = read(id);

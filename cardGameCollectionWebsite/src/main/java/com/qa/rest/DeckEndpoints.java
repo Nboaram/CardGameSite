@@ -52,6 +52,18 @@ public class DeckEndpoints {
 	}
 	
 	@GET
+	@Path("/decks/cards/{id}")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response getAllCardsFromDeck(@PathParam("id") int id) {
+		List<Decks_Cards> list = deckRepository.readAllCardsFromDeck(id);
+		if (list.size() == 0) {
+			return Response.noContent().build();
+		}
+		return Response.ok(list).build();
+		
+	}
+	
+	@GET
 	@Path("/decks/{id}")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response getOne(@PathParam("id") int id) {
@@ -73,6 +85,8 @@ public class DeckEndpoints {
 		Deck deckRS2 = deckRepository.update(id, deck);
 		return Response.ok(deckRS2).build();
 	}
+	
+
 	
 	@PUT
 	@Produces(MediaType.APPLICATION_JSON)
