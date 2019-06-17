@@ -1,5 +1,6 @@
     let card = {
         name: "Peasant",
+        pictureUrl: "blank",
         cost: 1,
         type: "Commoner",
         cardText: "He works in the fields",
@@ -34,5 +35,8 @@ function setValues() {
     }
         if(document.getElementById("healthInput").value != ""){
         card.health = document.getElementById("healthInput").value;
+    }
+    if(document.getElementById("pictureInput").value != ""){
+        card.pictureUrl = document.getElementById("pictureInput").value;
     }
 }
