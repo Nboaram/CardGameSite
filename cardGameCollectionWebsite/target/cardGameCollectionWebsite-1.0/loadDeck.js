@@ -1,4 +1,4 @@
-let foundDeck;
+
 
 loadDeck();
 
@@ -7,10 +7,17 @@ function loadDeck () {
     
     //Find Deck Name
     serverRequest("GET", "/decks/"+id, null).then((request) => {
-        this.foundDeck = JSON.parse(request.responseText);
-        console.log(this.foundDeck);
-        document.getElementById("deckNameText").innerHTML = this.foundDeck[name];
-        
+        let foundDeck;
+        foundDeck = JSON.parse(request.responseText);
+        console.log(foundDeck);
+        for (let deck in foundDeck) { 
+                console.log(deck);
+                if (deck == "name") {
+                    document.getElementById("deckNameText").innerHTML = foundDeck[deck];   
+                }
+
+        }
+            
         serverRequest("GET", "/deckscards/", null).then((secondRequest) => {
             let cardIdsInDeck = JSON.parse(secondRequest.responseText);
             console.log(cardIdsInDeck);
