@@ -36,15 +36,13 @@ function getAllCards() {
             newCell.align="center";
             newCell = newRow.insertCell(-1);
             //New Row
-            for (i = 0; i < 5; i++){
-                //Blank Row
-                newRow = cardTable.insertRow(-1); 
-                newCell = newRow.insertCell(-1);
-                newCell.colSpan="5";
-                let newParagraph = document.createElement("p");
-                newParagraph.innerHTML = "<br/>";
-                newCell.appendChild(newParagraph); 
-            }
+            newRow = cardTable.insertRow(-1); 
+            newCell = newRow.insertCell(-1);
+            newCell.id = card+"pictureUrl";
+            newCell.align = "center";
+            newCell.colSpan="5";
+            let newImage = new Image(200,200);
+            newCell.appendChild(newImage); 
             //New Row
             newRow = cardTable.insertRow(-1);
             newCell = newRow.insertCell(-1);
@@ -76,6 +74,9 @@ function getAllCards() {
             for(let property in information[card]) {
                     if (property != "id" && property != "pictureUrl") {
                     document.getElementById(card+"."+property).innerHTML = information[card][property];
+                    }
+                    if (property == "pictureUrl") {
+                      newImage.src = information[card][property];  
                     }
             }
             counter = counter+1;
