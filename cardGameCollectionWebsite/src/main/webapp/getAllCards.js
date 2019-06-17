@@ -20,7 +20,7 @@ function getAllCards() {
             rowRef.appendChild(startDiv);
                
             let cardDiv = document.createElement("div");
-            cardDiv.className = "col-3 bg-dark";
+            cardDiv.className = "col-3";
             rowRef.appendChild(cardDiv);
             let cardTable = document.createElement("table");
             cardTable.className="text-light cardTable"

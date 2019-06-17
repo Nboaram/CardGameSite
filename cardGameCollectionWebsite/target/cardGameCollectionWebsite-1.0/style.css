@@ -16,4 +16,12 @@
 
 .cardTable {
     padding: 5px;
+    width: 100%;
+    border-radius: 1em;
+    background-image: url("card-small.jpg");
 }
+
+body {
+    background-image: url("slate.jpg");
+}
+

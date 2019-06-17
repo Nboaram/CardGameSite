@@ -20,7 +20,7 @@ function getAllCards() {
             rowRef.appendChild(startDiv);
                
             let cardDiv = document.createElement("div");
-            cardDiv.className = "col-3 bg-dark";
+            cardDiv.className = "col-3";
             rowRef.appendChild(cardDiv);
             let cardTable = document.createElement("table");
             cardTable.className="text-light cardTable"
@@ -77,7 +77,7 @@ function getAllCards() {
             newCell.colSpan="5";
             newCell.align="center";
             newButton = document.createElement("button");
-            newButton.className="btn btn-outline-info";
+            newButton.className="btn btn-dark";
             newButton.innerHTML = "Add To Deck";
             newCell.appendChild(newButton);
 
